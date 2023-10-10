@@ -1,6 +1,25 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
 }
+console.log(hasTargetSum([3, 8, 12, 4, 11, 7], 10));  
+console.log(hasTargetSum([22, 19, 4, 6, 30], 25));  
+console.log(hasTargetSum([1, 2, 5], 4));           
+console.log(hasTargetSum([1, 2, 3, 4, 5], 10));     
+console.log(hasTargetSum([1, 2, 3, 4, 5], 8)); 
+
+function hasTargetSum(arr, target) {
+  const numMap = {}; 
+  
+  for (let num of arr) {
+      const diff = target - num;
+      if (numMap[diff]) {
+          return true; 
+      }
+      numMap[num] = 1; 
+  }
+  
+  return false; 
+}
 
 /* 
   Write the Big O time complexity of your function here
